@@ -27,28 +27,28 @@ game_layout_display= pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('Overtaking')
 time_clock=pygame.time.Clock()
 
-car_photo = pygame.image.load(os.getcwd() + '\\images/car.png')
-left_c = pygame.image.load(os.getcwd() + '\\images/car_left.png')
-right_c = pygame.image.load(os.getcwd() + '\\images/car_right.png')
-photo_obstacle = pygame.image.load(os.getcwd() + '\\images/obstacle.png')
-texture_photo = pygame.image.load(os.getcwd() + '\\images/texture.png')
+car_photo = pygame.image.load(os.getcwd() + '/images/car.png')
+left_c = pygame.image.load(os.getcwd() + '/images/car_left.png')
+right_c = pygame.image.load(os.getcwd() + '/images/car_right.png')
+photo_obstacle = pygame.image.load(os.getcwd() + '/images/obstacle.png')
+texture_photo = pygame.image.load(os.getcwd() + '/images/texture.png')
 (c_width, c_height) = car_photo.get_rect().size
 (c_left_width, c_left_height) = left_c.get_rect().size
 (c_right_width, c_right_height) = right_c.get_rect().size
 (t_width, t_height) = photo_obstacle.get_rect().size
 (txtwidth, txtheight) = texture_photo.get_rect().size
 
-icon = pygame.image.load(os.getcwd() + '\\images/logo.png')
+icon = pygame.image.load(os.getcwd() + '/images/logo.png')
 pygame.display.set_icon(icon)
 
-image_background = pygame.image.load(os.getcwd() + '\\images/background.jpg')
+image_background = pygame.image.load(os.getcwd() + '/images/background.jpg')
 bckgrndRect = image_background.get_rect()
 
-welcome_1 = pygame.mixer.Sound(os.getcwd() + '\\audio/intro1.mp3')
-welcome_2 = pygame.mixer.Sound(os.getcwd() + '\\audio/intro2.wav')
-audio_crash = pygame.mixer.Sound(os.getcwd() + '\\audio/car_crash.mp3')
-audio_ignition = pygame.mixer.Sound(os.getcwd() + '\\audio/ignition.mp3')
-pygame.mixer.music.load(os.getcwd()+'\\audio/running.mp3')
+welcome_1 = pygame.mixer.Sound(os.getcwd() + '/audio/intro1.mp3')
+welcome_2 = pygame.mixer.Sound(os.getcwd() + '/audio/intro2.wav')
+audio_crash = pygame.mixer.Sound(os.getcwd() + '/audio/car_crash.mp3')
+audio_ignition = pygame.mixer.Sound(os.getcwd() + '/audio/ignition.mp3')
+pygame.mixer.music.load(os.getcwd()+'/audio/running.mp3')
 
 def things_dodged(counting, highest_score, everything_speed):
 	fnt = pygame.font.SysFont(None, 25)
@@ -60,7 +60,7 @@ def things_dodged(counting, highest_score, everything_speed):
 	game_layout_display.blit(speed, (screen_width - 125, 0))
 
 def high_score_update(dodged):
-	high_scores = open(os.getcwd()+'\\textfile/high_score.txt', 'w')
+	high_scores = open(os.getcwd()+'/textfile/high_score.txt', 'w')
 	temperd = str(dodged)
 	high_scores.write(temperd)
 
